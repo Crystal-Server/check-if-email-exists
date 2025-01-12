@@ -17,6 +17,7 @@
 use warp::reject;
 
 #[derive(Debug)]
+#[allow(dead_code)]
 pub enum CsvError {
 	CsvLib(csv::Error),
 	CsvLibWriter(Box<csv::IntoInnerError<csv::Writer<Vec<u8>>>>),
@@ -25,6 +26,7 @@ pub enum CsvError {
 
 /// Catch all error struct for the bulk endpoints
 #[derive(Debug)]
+#[allow(dead_code)]
 pub enum BulkError {
 	EmptyInput,
 	JobInProgress,

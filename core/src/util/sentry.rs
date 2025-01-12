@@ -53,7 +53,7 @@ enum SentryError<'a> {
 	Smtp(&'a SmtpError),
 }
 
-impl<'a> SentryError<'a> {
+impl SentryError<'_> {
 	/// Get the error type to be passed into Sentry's Exception `ty` field.
 	fn get_exception_type(&self) -> String {
 		match self {

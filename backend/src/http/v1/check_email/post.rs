@@ -71,6 +71,7 @@ async fn handle_without_worker(
 		.await
 		.map_err(ReacherResponseError::from)?;
 
+	#[allow(clippy::unnecessary_literal_unwrap)]
 	let result = result_ok.unwrap();
 	info!(target: LOG_TARGET, email=body.to_email, is_reachable=?result.is_reachable, "Done verification");
 	Ok(serde_json::to_vec(&result).map_err(ReacherResponseError::from)?)

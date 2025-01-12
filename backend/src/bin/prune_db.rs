@@ -4,7 +4,6 @@ use tracing::info;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-	dotenv::dotenv().expect("Unable to load environment variables from .env file");
 	tracing_subscriber::fmt::init();
 
 	let db_url = std::env::var("DATABASE_URL").expect("Unable to read DATABASE_URL env var");
